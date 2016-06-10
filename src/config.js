@@ -1,6 +1,5 @@
 define(['app/common/services/passport/api-interceptor'], function(APIInterceptor) {
     function config($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) {
-        console.log("config");
         $urlRouterProvider.otherwise('/');
         $locationProvider.html5Mode(true);
 
@@ -30,7 +29,7 @@ define(['app/common/services/passport/api-interceptor'], function(APIInterceptor
                     },
                     body: {
                         templateUrl: 'src/sponsor/sponsor.html',
-                        controller: ''
+                        controller: 'sponsorCtrl'
                     },
                     footer: {
                         templateUrl: 'src/common/layout/footer/footer.html'
