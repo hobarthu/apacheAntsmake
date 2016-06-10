@@ -1,0 +1,44 @@
+.sample {
+  .welcome-text {
+    height: 65px;
+    color: rgb(183, 183, 183);
+    line-height: 65px;
+  }
+  .content-container {
+    padding: 0 15px;
+    .sample-container {
+      margin-bottom: 30px;
+      .sample-title {
+        border-bottom: solid 3px black;
+        padding: 10px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .cloth-item {
+        display: inline-block;
+        padding: 0 30px;
+      }
+    }
+
+  }
+}
+
+.sample-display {
+  display: inline-block;
+  .img-container {
+    height: 250px;
+    width: 220px;
+    cursor: pointer;
+  }
+  .description {
+    text-align: center;
+    div {
+      height: 30px;
+      line-height: 30px;
+    }
+  }
+  .get-button {
+    .antsmakeButton(220px,40px, white, @antYellow, lighten(@antYellow, 10%), darken(@antYellow, 10%));
+  }
+}

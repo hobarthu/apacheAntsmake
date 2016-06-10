@@ -1,1 +1,17 @@
 @antYellow: #F9851E;
+
+.antsmakeButton(@width, @height, @color, @bgColor-up, @bgColor-hover, @bgColor-down) {
+  width: @width;
+  height: @height;
+  line-height: @height;
+  text-align: center;
+  background-color: @bgColor-up;
+  color: @color;
+  cursor: pointer;
+  &:hover {
+    background-color: @bgColor-hover;
+  }
+  &:active {
+    background-color: @bgColor-down;
+  }
+}

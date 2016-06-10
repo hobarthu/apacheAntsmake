@@ -44,24 +44,24 @@ define(['app/common/services/passport/api-interceptor'], function(APIInterceptor
                         controller: 'headerCtrl'
                     },
                     body: {
-                        templateUrl: 'src/sponsor/sponsor.html',
-                        controller: 'sponsorCtrl'
+                        templateUrl: 'src/about/about.html',
+                        controller: 'aboutCtrl'
                     },
                     footer: {
                         templateUrl: 'src/common/layout/footer/footer.html'
                     }
                 }
             })
-            .state('get-sample', {
-                url: '/get-sample',
+            .state('sample', {
+                url: '/sample',
                 views: {
                     header: {
                         templateUrl: 'src/common/layout/header/header.html',
                         controller: 'headerCtrl'
                     },
                     body: {
-                        templateUrl: 'src/sponsor/sponsor.html',
-                        controller: 'sponsorCtrl'
+                        templateUrl: 'src/sample/sample.html',
+                        controller: 'sampleCtrl'
                     },
                     footer: {
                         templateUrl: 'src/common/layout/footer/footer.html'

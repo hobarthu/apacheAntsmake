@@ -1,0 +1,12 @@
+<div class="sample container">
+  <div class="welcome-text">欢迎来到Antsmake，穿点好的，很有必要！</div>
+  <div class="content-container">
+      <div data-ng-repeat="sample in samples" class="sample-container">
+          <div class="sample-title">{{sample.title}}</div>
+          <div data-ng-repeat="item in sample.clothes" class="cloth-item">
+              <sample-display sample-info="item"></sample-display>
+          </div>
+      </div>
+
+  </div>
+</div>
