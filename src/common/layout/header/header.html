@@ -1,0 +1,45 @@
+<div class="container">
+    <nav class="navbar am-navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navbar-collapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand logo-wrapper" href="#">
+                    <img alt="Antsmake" src="imgs/logo.png">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="header-navbar-collapse">
+                <ul class="nav am-navbar-nav">
+                    <li data-ng-repeat="tab in tabs">
+                        <a data-ng-click="switchTab(tab)" href="{{tab.path}}">{{tab.label}}</a>
+                    </li>
+                </ul>
+                <ul class="nav am-navbar-nav navbar-right">
+                    <li>
+                        <button class="btn btn-xs btn-default">开始你的设计</button>
+                    </li>
+                    <li>
+                        <button ng-click="toLogin()" ng-show="!logined" class="btn btn-xs btn-default btn-default-warning">登录 / 注册</button>
+                        <div class="dropdown am-dropdown" ng-show="logined">
+                            <a href="javascript:void(0)" class="btn btn-xs btn-img" id="am-main-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <img src="imgs/am-btn.jpg" />
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="am-main-dropdown">
+                                <li><a href="javascript:void(0)" ng-click="changeLocation('account.design')">我的设计</a></li>
+                                <li><a href="javascript:void(0)" ng-click="changeLocation('account.order')">我的订单</a></li>
+                                <li><a href="javascript:void(0)" ng-click="changeLocation('account.bill')">我的发票</a></li>
+                                <li><a href="javascript:void(0)" ng-click="changeLocation('account.address')">我的地址</a></li>
+                                <li><a href="javascript:void(0)" ng-click="">购物车</a></li>
+                                <li><a href="javascript:void(0)" ng-click="logout()">退出</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>

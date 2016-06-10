@@ -1,0 +1,42 @@
+<div class="nav-lace">
+    <div class="arrow-down"></div>
+    <ul class="horizental-list">
+        <li><a href="javascript:void">全部</a></li>
+        <li><a href="javascript:void">待支付</a></li>
+        <li><a href="javascript:void">已发货</a></li>
+        <li><a href="javascript:void">已完成</a></li>
+    </ul>
+</div>
+<div class="order-list">
+    <div class="order-list-item" ng-repeat="o in orders">
+        <div class="item-header">
+            <span class="date" ng-bind="o.createTime | date:'yyyy-MM-dd'"></span>
+            <span class="order-number">
+        		订单号： {{o.orderNum}}
+        	</span>
+        </div>
+        <div class="item-body">
+            <div class="img-container">
+                <img ng-src="{{o.img}}" />
+            </div>
+            <div class="caption">
+                <div class="title" ng-bind="o.title">
+                </div>
+                <div class="count">
+                    订购件数： <span class="number" ng-bind="o.count"></span> 件
+                </div>
+                <div class="price">
+                    ￥ <span class="number" ng-bind="o.totalPrice"></span>
+                </div>
+                <div class="status" ng-bind="o.statusText">
+                </div>
+            </div>
+            <div class="btns">
+                <button class="btn btn-info">订单详情</button>
+                <button ng-if="o.status==0" class="btn btn-info">立即结算</button>
+                <button ng-if="o.status>2" class="btn btn-info">查看物流</button>
+                <button ng-if="o.status==1" class="btn btn-info">申请售后</button>
+            </div>
+        </div>
+    </div>
+</div>

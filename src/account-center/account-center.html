@@ -1,0 +1,12 @@
+<div class="container">
+	<h6 class="text-gray">欢迎来到Antsmake，穿点好的，很有必要！</h6>
+	<ul class="nav nav-pills am-nav">
+		<li ng-class="{active:tab.index==currentTab.index, 'has-lace':tab.index<3}" ng-repeat="tab in tabs">
+			<a href="javascript:void" ng-click="changeTab(tab)">
+				<span ng-bind="tab.title"></span>
+				<i class="fa fa-angle-right" ng-class="{'fa-angle-right':tab.index!=currentTab.index,'fa-angle-down':tab.index==currentTab.index}"></i>
+			</a>
+		</li>
+	</ul>
+	<div class="nav-content" ui-view="accountLayout"></div>
+</div>

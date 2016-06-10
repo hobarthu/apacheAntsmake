@@ -1,0 +1,37 @@
+<div class="nav-lace">
+	<div class="arrow-down"></div>
+	<ul class="horizental-list">
+		<li><a href="javascript:void">全部</a></li>
+		<li><a href="javascript:void">待支付</a></li>
+		<li><a href="javascript:void">生产中</a></li>
+		<li><a href="javascript:void">已发货</a></li>
+		<li><a href="javascript:void">待完善</a></li>
+	</ul>
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12 col-md-6" ng-repeat="d in designs">
+			<div class="widget">
+				<div class="widget-header" ng-class="{'widget-header-info':d.status<2,'widget-header-warning':d.status>1&&d.status<4,'widget-header-success':d.status==4}" ng-bind="d.statusText"></div>
+				<div class="widget-body">
+					<div class="design-box">
+						<div class="img-container">
+							<img ng-src="{{d.img}}" />
+						</div>
+						<div class="caption">
+							<h4 ng-bind="d.title"></h4>
+							<p>当前已选件数： <span class="number" ng-bind="d.count"></span>件</p>
+							<p>预估生产总价： ￥<span class="number" ng-bind="d.totalEstimatePrice"></span></p>
+							<div class="btns">
+								<button ng-if="d.status<4" class="btn btn-info">设计详情</button>
+								<button ng-if="d.status==4" class="btn btn-info">选择商品</button>
+								<button ng-if="d.status==3" class="btn btn-warning">查看物流</button>
+								<button class="btn btn-warning" ng-if="d.status==1">立即结算</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
