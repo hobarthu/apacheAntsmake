@@ -1,4 +1,4 @@
-define(['app/common/services/passport/passport-service', 'app/common/services/passport/passport-service'], function() {
+define(['app/common/services/passport/passport-service', 'app/common/services/passport/passport-service', 'app/common/services/util/antscache-service'], function() {
 
     function headerCtrl($rootScope, $scope, $modal, $state, passportService) {
 
@@ -17,10 +17,9 @@ define(['app/common/services/passport/passport-service', 'app/common/services/pa
 
         var tab = {
             SPONSOR: {id: 0, name: "sponsor", label: "发起人手册", path: "sponsor"},
-            ABOUT: {id: 0, name: "sponsor", label: "关于产品", path: "about"},
-            GET_SAMPLE: {id: 0, name: "sponsor", label: "获取样衣", path: "get-sample"}
+            ABOUT: {id: 1, name: "about", label: "关于产品", path: "about"},
+            GET_SAMPLE: {id: 2, name: "get-sample", label: "获取样衣", path: "get-sample"}
         };
-
         $scope.tabs = [tab.SPONSOR, tab.ABOUT, tab.GET_SAMPLE];
 
         var passportModal = $modal({
@@ -123,11 +122,6 @@ define(['app/common/services/passport/passport-service', 'app/common/services/pa
         $scope.changeLocation = function(state){
             $state.go(state);
         };
-
-        $scope.switchTab = function(tab) {
-            console.log("aa");
-        };
-
     }
 
     headerCtrl.$inject = ['$rootScope', '$scope', '$modal', '$state', 'passportService'];

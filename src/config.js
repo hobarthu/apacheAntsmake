@@ -36,6 +36,38 @@ define(['app/common/services/passport/api-interceptor'], function(APIInterceptor
                     }
                 }
             })
+            .state('about', {
+                url: '/about',
+                views: {
+                    header: {
+                        templateUrl: 'src/common/layout/header/header.html',
+                        controller: 'headerCtrl'
+                    },
+                    body: {
+                        templateUrl: 'src/sponsor/sponsor.html',
+                        controller: 'sponsorCtrl'
+                    },
+                    footer: {
+                        templateUrl: 'src/common/layout/footer/footer.html'
+                    }
+                }
+            })
+            .state('get-sample', {
+                url: '/get-sample',
+                views: {
+                    header: {
+                        templateUrl: 'src/common/layout/header/header.html',
+                        controller: 'headerCtrl'
+                    },
+                    body: {
+                        templateUrl: 'src/sponsor/sponsor.html',
+                        controller: 'sponsorCtrl'
+                    },
+                    footer: {
+                        templateUrl: 'src/common/layout/footer/footer.html'
+                    }
+                }
+            })
             .state('account', {
                 url: '/account',
                 abstract: true,
@@ -89,8 +121,6 @@ define(['app/common/services/passport/api-interceptor'], function(APIInterceptor
                     }
                 }
             });
-
-
         $httpProvider.interceptors.push(APIInterceptor);
     }
     config.$inject = ['$stateProvider', '$urlRouterProvider', '$httpProvider', '$locationProvider'];
