@@ -18,9 +18,9 @@ define(['app/common/services/passport/passport-service', 'app/common/services/pa
         var tab = {
             SPONSOR: {id: 0, name: "sponsor", label: "发起人手册", path: "sponsor"},
             ABOUT: {id: 1, name: "about", label: "关于产品", path: "about"},
-            GET_SAMPLE: {id: 2, name: "get-sample", label: "获取样衣", path: "get-sample"}
+            SAMPLE: {id: 2, name: "sample", label: "获取样衣", path: "sample"}
         };
-        $scope.tabs = [tab.SPONSOR, tab.ABOUT, tab.GET_SAMPLE];
+        $scope.tabs = [tab.SPONSOR, tab.ABOUT, tab.SAMPLE];
 
         var passportModal = $modal({
             scope: $scope,
