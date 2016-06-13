@@ -1,5 +1,5 @@
 define([], function() {
-    var sampleDisplay = function() {
+    var sampleDisplay = function($state) {
         return {
             templateUrl: 'src/sample/sample-display.html',
             restrict: 'EA',
@@ -7,10 +7,13 @@ define([], function() {
                 sampleInfo: "="
             },
             link: function(scope, ele, attr) {
-                console.log("aaa");
+                scope.getSample = function(cloth) {
+                    $state.go('sampleDetail', {sampleId: cloth.id})
+                };
             }
         };
     };
+    sampleDisplay.$inject = ["$state"];
 
     return {
         sampleDisplay: sampleDisplay

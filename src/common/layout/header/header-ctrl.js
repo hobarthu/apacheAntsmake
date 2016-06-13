@@ -68,20 +68,30 @@ define(['app/common/services/passport/passport-service', 'app/common/services/pa
         	if(form.$invalid){
         		return false;
         	}
-        	passportService.login($scope.form.account, $scope.form.password).then(function(res){
-        		if(res.access_token && res.refresh_token) {
-        			$scope.hideModal();
-        			$rootScope.logined = true;
+            $scope.hideModal();
+            $rootScope.logined = true;
+            res.access_token = '';
+            res.refresh_token = '';
 
-        			passportService.storeCredential({
-        				account: $scope.form.account,
-        				accessToken: res.access_token,
-        				refreshToken: res.refresh_token
-        			});
-        		} 
-        	}, function(res){
-        		$scope.error = res;
-        	});
+            passportService.storeCredential({
+                account: $scope.form.account,
+                accessToken: res.access_token,
+                refreshToken: res.refresh_token
+            });
+//        	passportService.login($scope.form.account, $scope.form.password).then(function(res){
+//        		if(res.access_token && res.refresh_token) {
+//        			$scope.hideModal();
+//        			$rootScope.logined = true;
+//
+//        			passportService.storeCredential({
+//        				account: $scope.form.account,
+//        				accessToken: res.access_token,
+//        				refreshToken: res.refresh_token
+//        			});
+//        		}
+//        	}, function(res){
+//        		$scope.error = res;
+//        	});
         };
         $scope.logout = function(){
         	passportService.removeCredential();
