@@ -12,29 +12,29 @@
        <div class="cloth-detail-container">
            <div class="cloth-detail">
                <div class="type">{{clothObj.type}}</div>
-               <div>
+               <div class="title-container">
                    <span class="title">{{clothObj.title}}</span>
                    <span class="price">{{clothObj.price}}</span>
                </div>
-               <div>
-                   <div>请选择颜色：</div>
-                   <div>
+               <div class="color-container">
+                   <div class="text">请选择颜色：</div>
+                   <div class="color-items">
                        <div class="color-item" data-ng-repeat="color in clothObj.colors" data-ng-style="color"></div>
                    </div>
                </div>
-               <div><a href="">查看尺码与详情</a></div>
-               <div>
+               <div class="size-detail">
+                   <a href="">查看尺码与详情</a>
+               </div>
+               <div class="size-select">
                    <span>尺码： </span>
-                   <select name="100CM">
-                       <option value="100CM" selected></option>
-                   </select>
+                   <select ng-model="selectedSize" ng-options="size for size in clothObj.sizeList"></select>
                </div>
-               <div>
+               <div class="num-select">
                    <span>数量： </span>
-                   <select name="1">
-                       <option value="1" selected></option>
-                   </select>
+                   <select ng-model="selectedNum" ng-options="num for num in clothObj.numList"></select>
                </div>
+           </div>
+           <div class="button-container">
                <div class="add-cart-button">加入购物车</div>
            </div>
        </div>

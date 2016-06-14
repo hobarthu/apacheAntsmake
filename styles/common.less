@@ -34,3 +34,15 @@
     background-color: @bgColor-down;
   }
 }
+
+.aLink(@colorUp, @colorHover, @colorDown) {
+  a {
+    color: @colorUp;
+    &:hover {
+      color: @colorHover;
+    }
+    &:active {
+      color: @colorDown;
+    }
+  }
+}
