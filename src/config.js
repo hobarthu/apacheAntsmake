@@ -68,9 +68,24 @@ define(['app/common/services/passport/api-interceptor'], function(APIInterceptor
                     }
                 }
             })
+            .state('sampleDetail', {
+                url: '/sample/detail/{sampleId}',
+                views: {
+                    header: {
+                        templateUrl: 'src/common/layout/header/header.html',
+                        controller: 'headerCtrl'
+                    },
+                    body: {
+                        templateUrl: 'src/sample/sample-detail.html',
+                        controller: 'sampleDetailCtrl'
+                    },
+                    footer: {
+                        templateUrl: 'src/common/layout/footer/footer.html'
+                    }
+                }
+            })
             .state('account', {
                 url: '/account',
-                abstract: true,
                 views: {
                     header: {
                         templateUrl: 'src/common/layout/header/header.html',
@@ -82,7 +97,7 @@ define(['app/common/services/passport/api-interceptor'], function(APIInterceptor
                     },
                     footer: {
                         templateUrl: 'src/common/layout/footer/footer.html'
-                    },
+                    }
                 }
             })
             .state('account.design', {

@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="public-welcome-text">欢迎来到Antsmake，穿点好的，很有必要！</div>
+    <div class="public-content-container sample-detail">
+       <div class="small-img-container">
+           <div class="small-img" data-ng-repeat="side in clothObj.sides">
+               <img src="{{side.smallImgUrl}}" alt=""/>
+           </div>
+       </div>
+       <div class="big-img-container">
+          <div class="big-img"><img src="imgs/sample/big_img.jpg" alt=""/></div>
+       </div>
+       <div class="cloth-detail-container">
+           <div class="cloth-detail">
+               <div class="type">{{clothObj.type}}</div>
+               <div class="title-container">
+                   <span class="title">{{clothObj.title}}</span>
+                   <span class="price">{{clothObj.price}}</span>
+               </div>
+               <div class="color-container">
+                   <div class="text">请选择颜色：</div>
+                   <div class="color-items">
+                       <div class="color-item" data-ng-repeat="color in clothObj.colors" data-ng-style="color"></div>
+                   </div>
+               </div>
+               <div class="size-detail">
+                   <a href="">查看尺码与详情</a>
+               </div>
+               <div class="size-select">
+                   <span>尺码： </span>
+                   <select ng-model="selectedSize" ng-options="size for size in clothObj.sizeList"></select>
+               </div>
+               <div class="num-select">
+                   <span>数量： </span>
+                   <select ng-model="selectedNum" ng-options="num for num in clothObj.numList"></select>
+               </div>
+           </div>
+           <div class="button-container">
+               <div class="add-cart-button">加入购物车</div>
+           </div>
+       </div>
+    </div>
+</div>
