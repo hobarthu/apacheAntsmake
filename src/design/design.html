@@ -1,0 +1,89 @@
+<div class="design container">
+    <div class="page-items">
+        <div class="page-item" data-ng-class="{'selected-page-style': page.id == currentPage.id}" data-ng-repeat="page in pages" data-ng-click="changePage(page)">
+            <div class="page-order">{{page.order}}</div>
+            <div class="page-name">{{page.name}}</div>
+            <div class="gt">&gt;</div>
+        </div>
+    </div>
+    <div class="current-page">
+        <div data-ng-include src="currentPage.id"></div>
+    </div>
+</div>
+
+<script type="text/ng-template" id="design">
+    <div class="design-container">
+      <div class="tab-container">
+          <div class="tabbable"> <!-- Only required for left/right tabs -->
+              <ul class="nav nav-tabs">
+                  <li class="active"><a href="#tab1" data-toggle="tab">文字</a></li>
+                  <li><a href="#tab2" data-toggle="tab">图片</a></li>
+              </ul>
+              <div class="tab-content">
+                  <div class="tab-pane active" id="tab1">
+                      <p>文字</p>
+                  </div>
+                  <div class="tab-pane" id="tab2">
+                      <p>图片</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="img-container">
+          <img src="imgs/design/big-img.jpg" alt=""/>
+      </div>
+      <div class="style-container">
+          <div class="title">款式和颜色</div>
+      </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="chooseProduct">
+    <div>chooseProduct</div>
+</script>
+
+<script type="text/ng-template" id="addDescription">
+    <div class="description-container">
+        <form class="form-horizental">
+            <div class="form-group row">
+                <label class="control-label">设计名称：</label>
+                <div class="col-xs-3">
+                    <input type="text" placeholder="请为你的设计取名" class="form-control" ng-model="addr.postcode" required />
+                    <img src="imgs/design/exclamation.jpg" alt=""/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="control-label">我的昵称：</label>
+                <div class="col-xs-3">
+                    <input type="text" placeholder="提交后将无法修改" class="form-control" ng-model="addr.postcode" required />
+                    <img src="imgs/design/exclamation.jpg" alt=""/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="control-label">我的邮箱：</label>
+                <div class="col-xs-3">
+                    <input type="text" placeholder="输入您的常用邮箱" class="form-control" ng-model="addr.postcode" required />
+                    <img src="imgs/design/exclamation.jpg" alt=""/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="control-label">设计说明： </label>
+                <div class="col-xs-3">
+                    <input type="text" placeholder="简单的说明设计目的" class="form-control" ng-model="addr.postcode" required />
+                    <img src="imgs/design/exclamation.jpg" alt=""/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="control-label">设计描述： </label>
+                <div class="col-xs-7">
+                    <textarea rows="15" placeholder="在这里你可以描述此设计作品传递的内容与信息" class="form-control" ng-model="addr.address" required></textarea>
+                    <img src="imgs/design/exclamation.jpg" alt=""/>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="actions">
+        <input type="submit" class="btn btn-warning" value="提交" />
+        <div class="action-text">点击提交按钮时，我接受Antsmake的<a>用户协议</a></div>
+    </div>
+</script>

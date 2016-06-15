@@ -1,0 +1,104 @@
+.design {
+  .page-items {
+    display: flex;
+    flex-direction: row;
+    height: 15px;
+    line-height: 15px;
+    margin: 20px 15px;
+  }
+  .page-item {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    .page-order {
+      width: 15px;
+      height: 15px;
+      background-color: @disableColor;
+      text-align: center;
+      line-height: 15px;
+      border-radius: 7px;
+      color: white;
+    }
+    .page-name {
+      padding: 0 5px;
+      color: @disableColor;
+    }
+    .gt {
+      color: @disableColor;
+      margin-right: 5px;
+    }
+    &.selected-page-style {
+      .page-order {
+        background-color: @antYellow;
+      }
+      .page-name {
+        color: @antYellow;
+      }
+      .gt {
+        color: @antYellow;
+      }
+    }
+  }
+
+  .description-container {
+    width: 100%;
+    height: 600px;
+    border: 1px solid @commonBorderColor;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    .form-group {
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+      margin-left: 0;
+      margin-bottom: 30px;
+      label {
+        margin-bottom: 0;
+      }
+      .col-xs-3, .col-xs-7 {
+        padding-left: 10px;
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        img {
+          height: 16px;
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+  .actions {
+    text-align: center;
+    margin-top: 48px;
+    input {
+      width: 140px;
+    }
+    .action-text {
+      padding: 15px;
+      .aLink(@antYellow, lighten(@antYellow, 10%), darken(@antYellow, 10%));
+    }
+  }
+
+  .design-container {
+    width: 100%;
+    height: 600px;
+    border: 1px solid @commonBorderColor;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+    .tab-container {
+      border: 1px solid @commonBorderColor;
+      width: 200px;
+    }
+    .img-container {
+      display: flex;
+      justify-content: center;
+    }
+    .style-container {
+      border: 1px solid @commonBorderColor;
+      width: 220px;
+    }
+  }
+}

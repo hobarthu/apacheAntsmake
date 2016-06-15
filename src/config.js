@@ -135,6 +135,22 @@ define(['app/common/services/passport/api-interceptor'], function(APIInterceptor
                         controller: 'acAddressCtrl'
                     }
                 }
+            })
+            .state('design', {
+                url: '/design',
+                views: {
+                    header: {
+                        templateUrl: 'src/common/layout/header/header.html',
+                        controller: 'headerCtrl'
+                    },
+                    body: {
+                        templateUrl: 'src/design/design.html',
+                        controller: 'designCtrl'
+                    },
+                    footer: {
+                        templateUrl: 'src/common/layout/footer/footer.html'
+                    }
+                }
             });
         $httpProvider.interceptors.push(APIInterceptor);
     }

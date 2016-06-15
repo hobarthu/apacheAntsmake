@@ -36,6 +36,11 @@ define(['app/common/services/passport/passport-service', 'app/common/services/pa
         	$scope.currentFormUrl = formUrl.login;
             passportModal.$promise.then(passportModal.show);
         };
+
+        $scope.toDesign = function() {
+        	$state.go('design');
+        };
+
         $scope.toRegister = function(){
         	$scope.error = null;
         	$scope.form = {};
