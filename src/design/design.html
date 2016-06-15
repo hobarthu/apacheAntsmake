@@ -12,7 +12,30 @@
 </div>
 
 <script type="text/ng-template" id="design">
-    <div>design</div>
+    <div class="design-container">
+      <div class="tab-container">
+          <div class="tabbable"> <!-- Only required for left/right tabs -->
+              <ul class="nav nav-tabs">
+                  <li class="active"><a href="#tab1" data-toggle="tab">文字</a></li>
+                  <li><a href="#tab2" data-toggle="tab">图片</a></li>
+              </ul>
+              <div class="tab-content">
+                  <div class="tab-pane active" id="tab1">
+                      <p>文字</p>
+                  </div>
+                  <div class="tab-pane" id="tab2">
+                      <p>图片</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="img-container">
+          <img src="imgs/design/big-img.jpg" alt=""/>
+      </div>
+      <div class="style-container">
+          <div class="title">款式和颜色</div>
+      </div>
+    </div>
 </script>
 
 <script type="text/ng-template" id="chooseProduct">
@@ -20,30 +43,6 @@
 </script>
 
 <script type="text/ng-template" id="addDescription">
-    <!--<div class="description-container">-->
-      <!--<div class="description-item">-->
-        <!--<div>设计名称：</div>-->
-        <!--<input type="text" placeholder="请为你的设计取名"/>-->
-      <!--</div>-->
-      <!--<div class="description-item">-->
-        <!--<div>我的昵称：</div>-->
-          <!--<input type="text" placeholder="提交后将无法修改"/>-->
-      <!--</div>-->
-      <!--<div class="description-item">-->
-        <!--<div>我的邮箱：</div>-->
-          <!--<input type="text" placeholder="输入您的常用邮箱"/>-->
-      <!--</div>-->
-      <!--<div class="description-item">-->
-        <!--<div>设计说明：</div>-->
-          <!--<input type="text" placeholder="简单的说明设计目的"/>-->
-      <!--</div>-->
-
-      <!--<div class="description-item">-->
-        <!--<div>设计描述：</div>-->
-          <!--<textarea name="" id="" cols="50" rows="10" placeholder="在这里你可以描述此设计作品传递的内容与信息"></textarea>-->
-      <!--</div>-->
-    <!--</div>-->
-
     <div class="description-container">
         <form class="form-horizental">
             <div class="form-group row">
@@ -83,10 +82,8 @@
             </div>
         </form>
     </div>
-
     <div class="actions">
         <input type="submit" class="btn btn-warning" value="提交" />
         <div class="action-text">点击提交按钮时，我接受Antsmake的<a>用户协议</a></div>
     </div>
-
 </script>
