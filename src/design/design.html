@@ -47,44 +47,46 @@
     <div class="description-container">
         <form class="form-horizental">
             <div class="form-group row">
-                <label class="col-xs-2 control-label">设计名称：</label>
+                <label class="control-label">设计名称：</label>
                 <div class="col-xs-3">
                     <input type="text" placeholder="请为你的设计取名" class="form-control" ng-model="addr.postcode" required />
+                    <img src="imgs/design/exclamation.jpg" alt=""/>
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-xs-2 control-label">我的昵称：</label>
+                <label class="control-label">我的昵称：</label>
                 <div class="col-xs-3">
                     <input type="text" placeholder="提交后将无法修改" class="form-control" ng-model="addr.postcode" required />
+                    <img src="imgs/design/exclamation.jpg" alt=""/>
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-xs-2 control-label">我的邮箱：</label>
+                <label class="control-label">我的邮箱：</label>
                 <div class="col-xs-3">
                     <input type="text" placeholder="输入您的常用邮箱" class="form-control" ng-model="addr.postcode" required />
+                    <img src="imgs/design/exclamation.jpg" alt=""/>
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-xs-2 control-label">设计说明： </label>
+                <label class="control-label">设计说明： </label>
                 <div class="col-xs-3">
                     <input type="text" placeholder="简单的说明设计目的" class="form-control" ng-model="addr.postcode" required />
+                    <img src="imgs/design/exclamation.jpg" alt=""/>
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-xs-2 control-label">设计描述： </label>
+                <label class="control-label">设计描述： </label>
                 <div class="col-xs-7">
-                    <textarea rows="5" placeholder="在这里你可以描述此设计作品传递的内容与信息" class="form-control" ng-model="addr.address" required></textarea>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <div class="col-xs-12">
-                    <div class="actions">
-                        <input type="button" ng-click="cancelEdit(addr)" class="btn btn-warning" value="取消" />
-                        <input type="submit" class="btn btn-warning" value="保存" />
-                    </div>
+                    <textarea rows="15" placeholder="在这里你可以描述此设计作品传递的内容与信息" class="form-control" ng-model="addr.address" required></textarea>
+                    <img src="imgs/design/exclamation.jpg" alt=""/>
                 </div>
             </div>
         </form>
     </div>
+
+    <div class="actions">
+        <input type="submit" class="btn btn-warning" value="提交" />
+        <div class="action-text">点击提交按钮时，我接受Antsmake的<a>用户协议</a></div>
+    </div>
+
 </script>

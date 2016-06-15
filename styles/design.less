@@ -46,10 +46,38 @@
     border: 1px solid @commonBorderColor;
     display: flex;
     flex-direction: column;
-    .description-item {
+    padding: 40px;
+    .form-group {
       display: flex;
       flex-direction: row;
-      align-items: center;
+      align-items: baseline;
+      margin-left: 0;
+      margin-bottom: 30px;
+      label {
+        margin-bottom: 0;
+      }
+      .col-xs-3, .col-xs-7 {
+        padding-left: 10px;
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        img {
+          height: 16px;
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+  .actions {
+    text-align: center;
+    margin-top: 48px;
+    input {
+      width: 140px;
+    }
+    .action-text {
+      padding: 15px;
+      .aLink(@antYellow, lighten(@antYellow, 10%), darken(@antYellow, 10%));
     }
   }
 }
