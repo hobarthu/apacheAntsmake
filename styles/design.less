@@ -91,14 +91,92 @@
     .tab-container {
       border: 1px solid @commonBorderColor;
       width: 200px;
+      .tab-content {
+        textarea, select {
+          width: 100%;
+        }
+        .top-part {
+          padding: 10px 10px 20px 10px;
+          border-bottom: 1px solid @commonBorderColor;
+        }
+        .bottom-part {
+          padding: 10px;
+          .action-part {
+            display: flex;
+            font-size: 11px;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 15px;
+            margin-bottom: 60px;
+            .action-item {
+              text-align: center;
+            }
+          }
+          p {
+            .aLink(@antYellow, lighten(@antYellow, 10%), darken(@antYellow, 10%));
+          }
+        }
+        .title {
+          padding-left: 5px;
+        }
+        .word-item {
+          margin-bottom: 20px;
+        }
+      }
     }
     .img-container {
-      display: flex;
-      justify-content: center;
+      .option-links {
+        text-align: center;
+        margin-top: 40px;
+        .top-link {
+          margin-bottom: 20px;
+        }
+      }
     }
     .style-container {
-      border: 1px solid @commonBorderColor;
       width: 220px;
+      .title {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .style-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 15px 0;
+        img {
+          height: 65px;
+          width: 50px;
+        }
+        .description {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        .colors {
+          height: 65px;
+          width: 65px;
+          background-color: red;
+        }
+      }
+      .bottom-part {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        border-top: 1px solid @commonBorderColor;
+        margin-top: 80px;
+        .price-description {
+          font-size: 16px;
+          .price {
+            font-size: 20px;
+            color: @antYellow;
+          }
+        }
+        .next-button {
+          .antsmakeButton(150px, 30px, white, rgb(96, 196, 174), lighten(rgb(96, 196, 174), 10%), darken(rgb(96, 196, 174), 10%));
+        }
+      }
     }
   }
 }
