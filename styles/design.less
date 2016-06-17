@@ -42,7 +42,6 @@
 
   .description-container {
     width: 100%;
-    height: 600px;
     border: 1px solid @commonBorderColor;
     display: flex;
     flex-direction: column;
@@ -83,8 +82,6 @@
 
   .design-container {
     width: 100%;
-    height: 600px;
-    border: 1px solid @commonBorderColor;
     display: flex;
     justify-content: space-between;
     padding: 40px 0;
@@ -168,14 +165,141 @@
         margin-top: 80px;
         .price-description {
           font-size: 16px;
-          .price {
-            font-size: 20px;
-            color: @antYellow;
+          margin: 20px 0 10px 0;
+        }
+        .step-button {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  .choose-product {
+    width: 100%;
+    padding-left: 15px;
+    .step-title {
+      margin-bottom: 20px;
+      font-weight: bold;
+      font-size: 15px;
+    }
+    .radio-option {
+      padding: 15px 0 30px 0;
+      .radio-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 10px;
+        font-weight: normal;
+        cursor: pointer;
+        input {
+          margin-right: 10px;
+        }
+      }
+    }
+    .product-container {
+      height: 360px;
+      border: 1px solid @commonBorderColor;
+      color: @disableColor;
+      display: flex;
+      flex-direction: row;
+      padding: 10px 20px;
+      .left-part {
+        flex-grow: 1;
+        .left-item {
+          display: flex;
+          flex-direction: row;
+          align-items: baseline;
+          margin: 10px 0;
+          .item-left {
+            text-align: center;
+          }
+          .item-middle {
+            border-bottom: 1px @disableColor dashed;
+            align-self: center;
+            width: 250px;
+            margin: 0 10px;
+          }
+          .item-right {
+            display: flex;
+            flex-direction: row;
+            .minus, .plus {
+              height: 25px;
+              width: 25px;
+              border: 1px @disableColor solid;
+              text-align: center;
+              font-size: 16px;
+              cursor: pointer;
+            }
+            .minus {
+              border-right: none;
+            }
+            .plus {
+              border-left: none;
+            }
+            input {
+              width: 78px;
+              height: 25px;
+              text-align: center;
+            }
           }
         }
-        .next-button {
-          .antsmakeButton(150px, 30px, white, rgb(96, 196, 174), lighten(rgb(96, 196, 174), 10%), darken(rgb(96, 196, 174), 10%));
+      }
+      .right-part {
+        flex-grow: 1;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        #myCarousel {
+          width: 330px;
+          height: 300px;
+          .carousel-container {
+            display: flex;
+            flex-direction: row;
+            .prev, .next {
+              align-self: center;
+            }
+          }
         }
+      }
+    }
+    .count-part {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      height: 90px;
+      align-items: center;
+      div {
+        margin-right: 30px;
+      }
+      .delete {
+        cursor: pointer;
+        margin-right: 20px;
+      }
+    }
+    .add-product-panel {
+      height: 175px;
+      border: 1px solid @commonBorderColor;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .help-text {
+        color: @disableColor;
+        margin-top: 10px;
+      }
+    }
+    .total-price {
+      height: 40px;
+      text-align: right;
+      line-height: 40px;
+    }
+    .step-buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      padding: 15px 0;
+      .step-button {
+        margin-right: 90px;
       }
     }
   }
