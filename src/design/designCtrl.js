@@ -7,8 +7,8 @@ define([], function() {
         ];
         $scope.currentPage = $scope.pages[0];
 
-        $scope.changePage = function(page) {
-            $scope.currentPage = page;
+        $scope.changePage = function(order) {
+            $scope.currentPage = _.find($scope.pages, {order: order});
         };
     };
     designCtrl.$inject = ['$scope'];

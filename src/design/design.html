@@ -1,6 +1,6 @@
 <div class="design container">
     <div class="page-items">
-        <div class="page-item" data-ng-class="{'selected-page-style': page.id == currentPage.id}" data-ng-repeat="page in pages" data-ng-click="changePage(page)">
+        <div class="page-item" data-ng-class="{'selected-page-style': page.id == currentPage.id}" data-ng-repeat="page in pages" data-ng-click="changePage(page.order)">
             <div class="page-order">{{page.order}}</div>
             <div class="page-name">{{page.name}}</div>
             <div class="gt">&gt;</div>
@@ -120,16 +120,133 @@
               <div class="colors"></div>
           </div>
           <div class="bottom-part">
-              <div class="price-description">定制50件的预估价：<span class="price">28</span>/件</div>
+              <div class="price-description">定制50件的预估价：<span class="price-number">28</span>/件</div>
               <div>(10件起做)</div>
-              <div class="next-button">下一步</div>
+              <div class="step-button" data-ng-click="changePage(currentPage.order + 1)">下一步</div>
           </div>
       </div>
     </div>
 </script>
 
 <script type="text/ng-template" id="chooseProduct">
-    <div>chooseProduct</div>
+    <div class="choose-product">
+        <div class="radio-option">
+            <label for="radio1" class="radio-container">
+                <input name="option" type="radio" checked="checked" value="0" id="radio1" />
+                <span>输入尺码及对应数量</span>
+            </label>
+            <label for="radio2" class="radio-container">
+                <input name="option" type="radio" value="1" id="radio2"/><span>使用我们为你提供的尺码和数量统计工具</span>
+            </label>
+        </div>
+        <div class="step-title">第一步：确定款式和颜色</div>
+        <div class="product-container">
+            <div class="left-part">
+                <div class="left-item">圆领短袖T恤</div>
+                <div class="left-item">
+                    <div class="item-left">100CM</div>
+                    <div class="item-middle"></div>
+                    <div class="item-right">
+                        <div class="minus">-</div>
+                        <input type="text" value="0"/>
+                        <div class="plus">+</div>
+                    </div>
+                </div>
+                <div class="left-item">
+                    <div class="item-left">110CM</div>
+                    <div class="item-middle"></div>
+                    <div class="item-right">
+                        <div class="minus">-</div>
+                        <input type="text" value="0"/>
+                        <div class="plus">+</div>
+                    </div>
+                </div>
+                <div class="left-item">
+                    <div class="item-left">120CM</div>
+                    <div class="item-middle"></div>
+                    <div class="item-right">
+                        <div class="minus">-</div>
+                        <input type="text" value="0"/>
+                        <div class="plus">+</div>
+                    </div>
+                </div>
+                <div class="left-item">
+                    <div class="item-left">130CM</div>
+                    <div class="item-middle"></div>
+                    <div class="item-right">
+                        <div class="minus">-</div>
+                        <input type="text" value="0"/>
+                        <div class="plus">+</div>
+                    </div>
+                </div>
+                <div class="left-item">
+                    <div class="item-left">140CM</div>
+                    <div class="item-middle"></div>
+                    <div class="item-right">
+                        <div class="minus">-</div>
+                        <input type="text" value="0"/>
+                        <div class="plus">+</div>
+                    </div>
+                </div>
+                <div class="left-item">
+                    <div class="item-left">150CM</div>
+                    <div class="item-middle"></div>
+                    <div class="item-right">
+                        <div class="minus">-</div>
+                        <input type="text" value="0"/>
+                        <div class="plus">+</div>
+                    </div>
+                </div>
+                <div class="left-item">
+                    <div class="item-left">160CM</div>
+                    <div class="item-middle"></div>
+                    <div class="item-right">
+                        <div class="minus">-</div>
+                        <input type="text" value="0"/>
+                        <div class="plus">+</div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-part">
+                <div id="myCarousel" class="carousel slide">
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
+                   <div class="carousel-container">
+                       <div class="prev">
+                           <a class="left" href="#myCarousel" data-slide="prev"><img src="imgs/design/pre.jpg" alt=""/></a>
+                       </div>
+                       <!-- Carousel items -->
+                       <div class="carousel-inner">
+                           <div class="active item"><img src="imgs/design/choose-product.jpg" alt=""/></div>
+                           <div class="item"><img src="imgs/design/choose-product.jpg" alt=""/></div>
+                           <div class="item"><img src="imgs/design/choose-product.jpg" alt=""/></div>
+                       </div>
+                       <!-- Carousel nav -->
+                       <div class="next">
+                           <a class="right" href="#myCarousel" data-slide="next"><img src="imgs/design/next.jpg" alt=""/></a>
+                       </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+        <div class="count-part">
+            <div>预估生产成本： ￥<span class="price-number">28</span>/件</div>
+            <div>小计数量： <span class="price-number">28</span>件</div>
+            <div class="delete"><img src="imgs/design/delete.jpg" alt=""/></div>
+        </div>
+        <div class="add-product-panel">
+           <div>+添加其他商品</div>
+            <div class="help-text">（将这次设计的方案应用到更多款式上）</div>
+        </div>
+        <div class="total-price">预估生产成本： ￥<span class="price-number">28</span>/件</div>
+        <div class="step-buttons">
+            <div class="step-button" data-ng-click="changePage(currentPage.order - 1)">上一步</div>
+            <div class="step-button" data-ng-click="changePage(currentPage.order + 1)">下一步</div>
+        </div>
+    </div>
 </script>
 
 <script type="text/ng-template" id="addDescription">
