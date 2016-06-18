@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="public-welcome-text">欢迎来到Antsmake，穿点好的，很有必要！</div>
+    <div class="public-content-container case-detail">
+        <div class="case-container">
+            <div id="myCarousel" class="carousel slide">
+                <div class="carousel-container">
+                    <div class="prev">
+                        <a class="left" href="#myCarousel" data-slide="prev"><img src="imgs/design/pre.jpg" alt=""/></a>
+                    </div>
+                    <div class="small-img-container">
+                        <div class="small-img" data-ng-repeat="side in clothObj.sides">
+                            <img src="{{side.smallImgUrl}}" alt=""/>
+                        </div>
+                    </div>
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+                        <div class="active item"><img src="imgs/sample/big_img.jpg" alt=""/></div>
+                        <div class="item"><img src="imgs/sample/big_img.jpg" alt=""/></div>
+                        <div class="item"><img src="imgs/sample/big_img.jpg" alt=""/></div>
+                    </div>
+                    <!-- Carousel nav -->
+                    <div class="next">
+                        <a class="right" href="#myCarousel" data-slide="next"><img src="imgs/design/next.jpg" alt=""/></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-container">
+          <div class="bottom-left">越急越要穿</div>
+          <div class="bottom-right">
+              <div>发起人：测试者</div>
+              <input class="btn btn-xs btn-warning" value="编辑" type="submit">
+          </div>
+        </div>
+    </div>
+</div>

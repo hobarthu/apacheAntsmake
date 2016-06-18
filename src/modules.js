@@ -6,10 +6,11 @@ define([
 	'app/sponsor/modules',
 	'app/about/modules',
 	'app/sample/modules',
-	'app/design/modules'
+	'app/design/modules',
+	'app/case/modules'
 	], function(config){
 		var app = angular.module('antsmakeWeb', [
 			'ngCookies', 'ngResource', 'ui.router', 'mgcrea.ngStrap',
-			'common', 'home', 'accountCenter', 'sponsor', 'about', 'sample', 'design']);
+			'common', 'home', 'accountCenter', 'sponsor', 'about', 'sample', 'design', 'caseDetail']);
 		app.config(config);
 	});

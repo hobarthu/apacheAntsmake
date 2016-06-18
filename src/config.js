@@ -20,6 +20,22 @@ define(['app/common/services/passport/api-interceptor'], function(APIInterceptor
                     }
                 }
             })
+            .state('caseDetail', {
+                url: '/caseDetail/{caseId}',
+                views: {
+                    header: {
+                        templateUrl: 'src/common/layout/header/header.html',
+                        controller: 'headerCtrl'
+                    },
+                    body: {
+                        templateUrl: 'src/case/case-detail.html',
+                        controller: 'caseDetailCtrl'
+                    },
+                    footer: {
+                        templateUrl: 'src/common/layout/footer/footer.html'
+                    }
+                }
+            })
             .state('sponsor', {
                 url: '/sponsor',
                 views: {

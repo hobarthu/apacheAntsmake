@@ -182,6 +182,7 @@ input:-moz-placeholder { font-family: 'SimSun';font-size: 14px;color: #bfbfbf; }
 }
 .list-design>li {
 	padding: 10px 15px;
+    cursor: pointer;
 }
 .list-design>li:not(:last-child) {
 	border-bottom: 1px solid rgb(183, 183, 183);

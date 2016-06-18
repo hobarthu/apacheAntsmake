@@ -1,7 +1,9 @@
 define([], function(){
-	function homeCtrl($scope){
-
+	function homeCtrl($scope, $state){
+        $scope.toCaseDetail = function() {
+            $state.go('caseDetail', {caseId: 0});
+        };
 	}
-	homeCtrl.$inject = ['$scope'];
+	homeCtrl.$inject = ['$scope', '$state'];
 	return homeCtrl;
 });
