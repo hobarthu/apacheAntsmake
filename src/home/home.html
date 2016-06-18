@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container home-list-container">
 	<ul class="nav nav-tabs am-nav-tabs">
 		<li><a class="active" href="javascript:void(0)">最新设计</a></li>
 		<li><a href="javascript:void(0)">我的设计</a></li>
@@ -41,4 +41,26 @@
 			</li>
 		</ul>
 	</div>
+    <div class="float-container">
+        <div class="item">
+            <img src="imgs/home/shopping-cart.jpg" alt=""/>
+            <div>购物车</div>
+        </div>
+        <div class="item">
+            <img src="imgs/home/qq.jpg" alt=""/>
+            <div>在线客服</div>
+        </div>
+        <div class="item">
+            <img src="imgs/home/phone.jpg" alt=""/>
+            <div class="phone-number">4000-8191-00</div>
+        </div>
+        <div class="item" data-ng-mouseenter="onWeChatMouseEnter()" data-ng-mouseleave="onWeChatMouseLeave()">
+            <img src="imgs/home/wechat.jpg" alt=""/>
+            <div>添加微信</div>
+        </div>
+        <div class="qr-code-container" data-ng-if="showQrCode">
+            <img src="imgs/home/qr-code.jpg" alt=""/>
+        </div>
+    </div>
 </div>
+
