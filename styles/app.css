@@ -733,3 +733,48 @@ input:-moz-placeholder { font-family: 'SimSun';font-size: 14px;color: #bfbfbf; }
 	padding: 4px 50px;
 	margin-right: 50px;
 }
+
+.sub-img-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.sub-img-container>.row {
+    width: 900px;
+}
+.home-list-container {
+    width: 900px;
+    position: relative;
+}
+.float-container {
+    position: absolute;
+    right: -85px;
+    top: 30px;
+    border: 1px rgb(229, 229, 229) solid;
+    width: 85px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0;
+}
+.float-container>.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0;
+    cursor: pointer;
+}
+.float-container>.item>.phone-number {
+    font-size: 12px;
+}
+.qr-code-container {
+    position: absolute;
+    bottom: -101px;
+    left: -8px;
+}
+.qr-code-container>img {
+    width: 100px;
+    height: 100px;
+}
