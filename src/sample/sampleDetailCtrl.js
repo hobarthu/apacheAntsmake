@@ -12,12 +12,13 @@ define([], function() {
             price: "40元",
             colors: [{"background-color": "gray"}, {"background-color": "white"}, {"background-color": "black"}, {"background-color": "blue"}, {"background-color": "yellow"}],
             sizeList: ["100CM", "110CM", "120CM"],
-            numList: [1, 2, 3]
+            minCount: 1,
+            maxCount: 3
         };
 
         (function() {
             $scope.selectedSize = $scope.clothObj.sizeList[0];
-            $scope.selectedNum = $scope.clothObj.numList[0];
+            $scope.selectedNum = 1;
         })();
     };
     sampleDetailCtrl.$inject = ['$scope'];
