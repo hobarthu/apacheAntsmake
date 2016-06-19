@@ -1,6 +1,9 @@
 .shopping-cart {
   padding: 0;
   .item-list {
+    tbody {
+      border-bottom: 1px #ddd solid;
+    }
     th, td {
       width: 100px;
       text-align: center;
@@ -26,6 +29,35 @@
     .size {
       select {
         width: 75px;
+      }
+    }
+    .delete {
+      cursor: pointer;
+    }
+  }
+  .bottom-part {
+    .total-detail {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      .select-all-checkbox {
+        margin-left: 160px;
+        cursor: pointer;
+      }
+      .total {
+        display: flex;
+        flex-direction: row;
+        .total-price {
+          margin: 0 40px;
+        }
+      }
+    }
+    .submit-btn {
+      text-align: center;
+      margin: 60px;
+      button {
+        width: 150px;
       }
     }
   }

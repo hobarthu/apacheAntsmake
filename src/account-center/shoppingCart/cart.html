@@ -17,42 +17,38 @@
                </thead>
                <tbody>
                    <tr class="item" data-ng-repeat="item in items">
-                       <td class="checkbox-container"><input type="checkbox" checked="item.selected"/></td>
+                       <td class="checkbox-container">
+                           <input type="checkbox" ng-model="item.selected" data-ng-click="doAllSelectedCheck()"/>
+                       </td>
                        <td class="img-container"><img src="{{item.img}}" alt=""/></td>
                        <td>{{::item.title}}</td>
                        <td>{{::item.color}}</td>
                        <td class="size"><select ng-options="size.title for size in sizes" ng-model="item.size"></select></td>
-                       <td class="count"><input type="text" value="{{::item.count}}"/></td>
-                       <td>{{::item.price}}</td>
-                       <td>delete</td>
+                       <td class="count"><input type="number" ng-model="item.count"/></td>
+                       <td>￥<span class="price-number">{{::item.price}}</span></td>
+                       <td class="delete" data-ng-click="deleteItem(item)"><img src="imgs/cart/delete.jpg" alt=""/></td>
                    </tr>
                </tbody>
            </table>
        </div>
-       <!--<div class="item-list">-->
-           <!--<div class="list-header">-->
-               <!--<div></div>-->
-               <!--<div></div>-->
-               <!--<div>名称</div>-->
-               <!--<div>颜色</div>-->
-               <!--<div>尺码 </div>-->
-               <!--<div>数量</div>-->
-               <!--<div>价格</div>-->
-               <!--<div></div>-->
-           <!--</div>-->
-           <!--<div class="item" data-ng-repeat="item in items">-->
-               <!--<div><input type="checkbox" checked="checked"/></div>-->
-               <!--<div><img src="{{::item.img}}" alt=""/></div>-->
-               <!--<div>{{::item.title}}</div>-->
-               <!--<div>{{::item.color}}</div>-->
-               <!--<div>-->
-                   <!--<select ng-options="size.title for size in sizes" ng-model="item.size"></select>-->
-               <!--</div>-->
-               <!--<div><input type="text" value="{{::item.count}}"/></div>-->
-               <!--<div>39</div>-->
-               <!--<div>delete</div>-->
-           <!--</div>-->
-
-       <!--</div>-->
+       <div class="bottom-part">
+           <div class="total-detail">
+               <label class="select-all-checkbox" data-ng-click="selectAll()">
+                   <input type="checkbox" id="cart_select_all" ng-model="isAllSelected"/>全选
+               </label>
+               <div class="total">
+                   <div class="total-number">
+                       总数量：
+                       <span class="price-number" ng-bind="getTotalCount()"></span>
+                       件
+                   </div>
+                   <div class="total-price">
+                       小计：￥
+                       <span class="price-number"  ng-bind="getTotalPrice()"></span>
+                   </div>
+               </div>
+           </div>
+           <div class="submit-btn"><button class="btn btn-warning">提交订单</button></div>
+       </div>
     </div>
 </div>
