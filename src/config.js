@@ -152,6 +152,22 @@ define(['app/common/services/passport/api-interceptor'], function(APIInterceptor
                     }
                 }
             })
+            .state('myCart', {
+                url: '/account/cart',
+                views: {
+                    header: {
+                        templateUrl: 'src/common/layout/header/header.html',
+                        controller: 'headerCtrl'
+                    },
+                    body: {
+                        templateUrl: 'src/account-center/shoppingCart/cart.html',
+                        controller: 'acCartCtrl'
+                    },
+                    footer: {
+                        templateUrl: 'src/common/layout/footer/footer.html'
+                    }
+                }
+            })
             .state('design', {
                 url: '/design',
                 views: {

@@ -11,9 +11,9 @@
             <div>
                 <span class="block">
                     <div class="input-group">
-                        <input required ng-pattern="phoneRegExp" name="account" type="text" ng-model="form.account" class="form-control" placeholder="请输入你的手机号码">
+                        <input required ng-pattern="phoneRegExp" name="account" type="text" ng-model="form.account" class="form-control" ants-placeholder="请输入你的手机号码">
                         <span class="input-group-btn">
-                            <button ng-disabled="!validationForm.account.$valid" ng-bind="getPwdResetCodeText" class="btn btn-danger" ng-click="getPwdResetCode(form.account)"></button>
+                            <button ng-disabled="!validationForm.account.$valid" ng-bind="getPwdResetCodeText" class="btn btn-warning" ng-click="getPwdResetCode(form.account)"></button>
                         </span>
                     </div>
                     
@@ -28,7 +28,7 @@
             <label>验证码</label>
             <div>
                 <span class="block">
-                    <input required name="code" type="text" ng-model="form.code" class="form-control" placeholder="请输入收到的验证码">
+                    <input required name="code" type="text" ng-model="form.code" class="form-control" ants-placeholder="请输入收到的验证码">
                 </span>
                 <div class="help-block" ng-show="!validationForm.code.$pristine&&validationForm.code.$invalid">
                     请输入收到的验证码
@@ -39,7 +39,7 @@
             <label>新密码</label>
             <div>
                 <span class="block">
-                    <input required name="password" type="password" ng-model="form.password" ng-minlength="6" class="form-control" placeholder="至少6个字符">
+                    <input required name="password" type="password" ng-model="form.password" ng-minlength="6" class="form-control" ants-placeholder="至少6个字符">
                 </span>
                 <div class="help-block" ng-show="!validationForm.password.$pristine&&validationForm.password.$invalid">
                     至少6个字符

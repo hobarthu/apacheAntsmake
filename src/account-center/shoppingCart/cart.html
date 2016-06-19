@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="public-welcome-text">欢迎来到Antsmake，穿点好的，很有必要！</div>
+    <div class="public-content-container shopping-cart">
+       <div class="item-list">
+           <table class="table">
+               <thead>
+                    <tr>
+                       <th class="checkbox-container"></th>
+                       <th class="img-container"></th>
+                       <th>名称</th>
+                       <th>颜色</th>
+                       <th>尺码</th>
+                       <th>数量</th>
+                       <th>价格</th>
+                       <th></th>
+                   </tr>
+               </thead>
+               <tbody>
+                   <tr class="item" data-ng-repeat="item in items">
+                       <td class="checkbox-container"><input type="checkbox" checked="item.selected"/></td>
+                       <td class="img-container"><img src="{{item.img}}" alt=""/></td>
+                       <td>{{::item.title}}</td>
+                       <td>{{::item.color}}</td>
+                       <td class="size"><select ng-options="size.title for size in sizes" ng-model="item.size"></select></td>
+                       <td class="count"><input type="text" value="{{::item.count}}"/></td>
+                       <td>{{::item.price}}</td>
+                       <td>delete</td>
+                   </tr>
+               </tbody>
+           </table>
+       </div>
+       <!--<div class="item-list">-->
+           <!--<div class="list-header">-->
+               <!--<div></div>-->
+               <!--<div></div>-->
+               <!--<div>名称</div>-->
+               <!--<div>颜色</div>-->
+               <!--<div>尺码 </div>-->
+               <!--<div>数量</div>-->
+               <!--<div>价格</div>-->
+               <!--<div></div>-->
+           <!--</div>-->
+           <!--<div class="item" data-ng-repeat="item in items">-->
+               <!--<div><input type="checkbox" checked="checked"/></div>-->
+               <!--<div><img src="{{::item.img}}" alt=""/></div>-->
+               <!--<div>{{::item.title}}</div>-->
+               <!--<div>{{::item.color}}</div>-->
+               <!--<div>-->
+                   <!--<select ng-options="size.title for size in sizes" ng-model="item.size"></select>-->
+               <!--</div>-->
+               <!--<div><input type="text" value="{{::item.count}}"/></div>-->
+               <!--<div>39</div>-->
+               <!--<div>delete</div>-->
+           <!--</div>-->
+
+       <!--</div>-->
+    </div>
+</div>
