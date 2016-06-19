@@ -15,6 +15,10 @@ define([], function(){
         $scope.onWeChatMouseLeave = function() {
             $scope.showQrCode = false;
         };
+
+        $scope.toCart = function() {
+            $state.go("myCart");
+        };
 	}
 	homeCtrl.$inject = ['$scope', '$state'];
 	return homeCtrl;

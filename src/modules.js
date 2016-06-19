@@ -1,4 +1,5 @@
 define([
+    'app/antsCtrl',
 	'app/config',
 	'app/common/modules',
 	'app/home/modules',
@@ -8,9 +9,10 @@ define([
 	'app/sample/modules',
 	'app/design/modules',
 	'app/case/modules'
-	], function(config){
+	], function(antsCtrl, config){
 		var app = angular.module('antsmakeWeb', [
 			'ngCookies', 'ngResource', 'ui.router', 'mgcrea.ngStrap',
 			'common', 'home', 'accountCenter', 'sponsor', 'about', 'sample', 'design', 'caseDetail']);
 		app.config(config);
+        app.controller("antsCtrl", antsCtrl);
 	});

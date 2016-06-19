@@ -10,7 +10,7 @@
             <label>手机</label>
             <div>
                 <span class="block">
-                    <input required ng-pattern="phoneRegExp" name="account" type="text" ng-model="form.account" class="form-control" placeholder="">
+                    <input required ng-pattern="phoneRegExp" name="account" type="text" ng-model="form.account" class="form-control" ants-placeholder="">
                 </span>
                 <div class="help-block" ng-show="!validationForm.account.$pristine&&validationForm.account.$invalid">
                     请输入正确的手机号码！
@@ -21,7 +21,7 @@
             <label>登录密码</label>
             <div>
                 <span class="block">
-                    <input required name="password" type="password" ng-model="form.password" class="form-control" placeholder="">
+                    <input required name="password" type="password" ng-model="form.password" class="form-control" ants-placeholder="">
                 </span>
                 <div class="help-block" ng-show="!validationForm.password.$pristine&&validationForm.password.$invalid">
                     密码不能为空！
