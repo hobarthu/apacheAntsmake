@@ -778,3 +778,16 @@ input:-moz-placeholder { font-family: 'SimSun';font-size: 14px;color: #bfbfbf; }
     width: 100px;
     height: 100px;
 }
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: rgb(229, 229, 229) !important;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: rgb(229, 229, 229) !important;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: rgb(229, 229, 229) !important;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: rgb(229, 229, 229) !important;
+}

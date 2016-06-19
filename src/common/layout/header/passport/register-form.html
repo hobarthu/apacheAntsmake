@@ -13,7 +13,7 @@
                     <div class="input-group">
                         <input required ng-pattern="phoneRegExp" name="account" type="text" ng-model="form.account" class="form-control" placeholder="请输入你的手机号码">
                         <span class="input-group-btn">
-                            <button ng-disabled="!validationForm.account.$valid" ng-bind="getRegisterCodeText" class="btn btn-danger" ng-click="getRegisterCode(form.account)"></button>
+                            <button ng-disabled="!validationForm.account.$valid" ng-bind="getRegisterCodeText" class="btn btn-warning" ng-click="getRegisterCode(form.account)"></button>
                         </span>
                     </div>
                     
