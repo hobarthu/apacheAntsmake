@@ -2,7 +2,7 @@ define([], function() {
     var sampleDetailCtrl = function($scope) {
         $scope.clothObj = {
             sides: [
-                {id: 0, img: "imgs/transparent/coolpass-r/B01.png"},
+                {id: 0, img: "imgs/transparent/coolpass-r/front.png"},
                 {id: 1, img: "imgs/transparent/coolpass-r/back.png"},
                 {id: 2, img: "imgs/transparent/coolpass-r/right-side.png"},
                 {id: 3, img: "imgs/transparent/coolpass-r/left-side.png"}

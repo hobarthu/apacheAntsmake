@@ -117,7 +117,7 @@ define(['app/common/services/passport/api-interceptor'], function(APIInterceptor
                 }
             })
             .state('account.design', {
-                url: '/account/design',
+                url: '/design',
                 views: {
                     accountLayout: {
                         templateUrl: 'src/account-center/design/design.html',
@@ -126,7 +126,7 @@ define(['app/common/services/passport/api-interceptor'], function(APIInterceptor
                 }
             })
             .state('account.order', {
-                url: '/account/order',
+                url: '/order',
                 views: {
                     accountLayout: {
                         templateUrl: 'src/account-center/order/order.html',
@@ -135,7 +135,7 @@ define(['app/common/services/passport/api-interceptor'], function(APIInterceptor
                 }
             })
             .state('account.bill', {
-                url: '/account/bill',
+                url: '/bill',
                 views: {
                     accountLayout: {
                         templateUrl: 'src/account-center/bill/bill.html',
@@ -144,7 +144,7 @@ define(['app/common/services/passport/api-interceptor'], function(APIInterceptor
                 }
             })
             .state('account.address', {
-                url: '/account/address',
+                url: '/address',
                 views: {
                     accountLayout: {
                         templateUrl: 'src/account-center/address/address.html',
@@ -178,6 +178,22 @@ define(['app/common/services/passport/api-interceptor'], function(APIInterceptor
                     body: {
                         templateUrl: 'src/design/design.html',
                         controller: 'designCtrl'
+                    },
+                    footer: {
+                        templateUrl: 'src/common/layout/footer/footer.html'
+                    }
+                }
+            })
+            .state('designDetail', {
+                url: '/design/detail/{designId}',
+                views: {
+                    header: {
+                        templateUrl: 'src/common/layout/header/header.html',
+                        controller: 'headerCtrl'
+                    },
+                    body: {
+                        templateUrl: 'src/design/design-detail.html',
+                        controller: 'designDetailCtrl'
                     },
                     footer: {
                         templateUrl: 'src/common/layout/footer/footer.html'
