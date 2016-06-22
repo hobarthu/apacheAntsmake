@@ -23,7 +23,7 @@
 							<p>当前已选件数： <span class="number" ng-bind="d.count"></span>件</p>
 							<p>预估生产总价： ￥<span class="number" ng-bind="d.totalEstimatePrice"></span></p>
 							<div class="btns">
-								<button ng-if="d.status<4" class="btn btn-info">设计详情</button>
+								<button ng-if="d.status<4" class="btn btn-info" data-ng-click="toDesignDetail(d.id)">设计详情</button>
 								<button ng-if="d.status==4" class="btn btn-info">选择商品</button>
 								<button ng-if="d.status==3" class="btn btn-warning">查看物流</button>
 								<button class="btn btn-warning" ng-if="d.status==1">立即结算</button>

@@ -1,5 +1,5 @@
 define([], function(){
-	function designCtrl($scope){
+	function designCtrl($scope, $state){
 		var statuses = [{
 				code: 0,
 				title: "定价中"
@@ -18,6 +18,7 @@ define([], function(){
 			}];
 
 		$scope.designs = [{
+            id: 0,
 			status: 0,
 			title: "越急越要穿",
 			count: 28,
@@ -27,6 +28,7 @@ define([], function(){
 			producePrice: 28,
 			img: "imgs/thirt.png"
 		}, {
+            id: 1,
 			status: 1,
 			title: "越急越要穿",
 			count: 28,
@@ -36,6 +38,7 @@ define([], function(){
 			producePrice: 28,
 			img: "imgs/thirt.png"
 		}, {
+            id: 2,
 			status: 2,
 			title: "越急越要穿",
 			count: 28,
@@ -45,6 +48,7 @@ define([], function(){
 			producePrice: 28,
 			img: "imgs/thirt.png"
 		}, {
+            id: 3,
 			status: 3,
 			title: "越急越要穿",
 			count: 28,
@@ -54,6 +58,7 @@ define([], function(){
 			producePrice: 28,
 			img: "imgs/thirt.png"
 		}, {
+            id: 4,
 			status: 4,
 			title: "越急越要穿",
 			count: 28,
@@ -73,7 +78,11 @@ define([], function(){
 			}
 		});
 
+        $scope.toDesignDetail = function(id) {
+            $state.go("designDetail", {designId: id});
+        };
+
 	}
-	designCtrl.$inject = ['$scope'];
+	designCtrl.$inject = ['$scope', "$state"];
 	return designCtrl;
 });

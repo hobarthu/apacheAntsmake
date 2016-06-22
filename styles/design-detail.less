@@ -1,0 +1,203 @@
+.design-detail {
+  .page-items {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    line-height: 50px;
+  }
+  .page-item {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    .page-name {
+      padding: 0 5px;
+      color: @disableColor;
+    }
+    .gt {
+      color: @disableColor;
+      margin-right: 5px;
+    }
+    &.selected-page-style {
+      .page-name {
+        color: @antYellow;
+      }
+      .gt {
+        color: @antYellow;
+      }
+    }
+  }
+
+  .status-progress-bar {
+    display: flex;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    .status-item {
+      display: flex;
+      .yellow {
+        width: 68px;
+        text-align: center;
+        border-bottom: 3px solid @antYellow;
+      }
+      .black {
+        width: 24px;
+        border-bottom: 3px solid black;
+      }
+    }
+    .rest {
+      width: calc(~"100% - 368px");
+      border-bottom: 3px solid black;
+    }
+  }
+  .shopping-list {
+    height: 60px;
+    line-height: 60px;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 5px;
+  }
+
+  .cloth-title {
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+    font-size: 16px;
+    color: @disableColor;
+    margin-bottom: 10px;
+  }
+  .choose-product {
+    width: 100%;
+    .step-title {
+      margin-bottom: 20px;
+      font-weight: bold;
+      font-size: 15px;
+    }
+    .product-container {
+      height: 294px;
+      color: @disableColor;
+      display: flex;
+      flex-direction: row;
+      .left-part {
+        width: 480px;
+        height: 294px;
+        padding: 20px 30px 30px 20px;
+        border: 1px solid @commonBorderColor;
+        .left-item {
+          display: flex;
+          flex-direction: row;
+          align-items: baseline;
+          margin: 10px 0;
+          .item-left {
+            text-align: center;
+          }
+          .item-middle {
+            border-bottom: 1px @disableColor dashed;
+            align-self: center;
+            width: 250px;
+            margin: 0 10px;
+          }
+          .item-right {
+            display: flex;
+            flex-direction: row;
+            .minus, .plus {
+              height: 25px;
+              width: 25px;
+              border: 1px @disableColor solid;
+              text-align: center;
+              font-size: 16px;
+              cursor: pointer;
+            }
+            .minus {
+              border-right: none;
+            }
+            .plus {
+              border-left: none;
+            }
+            input {
+              width: 78px;
+              height: 25px;
+              text-align: center;
+            }
+          }
+        }
+      }
+      .right-part {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin-left: 55px;
+        width: 362px;
+        position: relative;
+        top: -20px;
+        #myCarousel {
+          width: 330px;
+          height: 300px;
+          .carousel-container {
+            display: flex;
+            flex-direction: row;
+            .prev, .next {
+              align-self: center;
+            }
+          }
+        }
+      }
+    }
+    .count-part {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      height: 90px;
+      align-items: center;
+      div {
+        margin-right: 30px;
+      }
+      .delete {
+        cursor: pointer;
+        margin-right: 20px;
+      }
+    }
+    .total-count {
+      height: 40px;
+    }
+    .add-product-panel {
+      height: 175px;
+      border: 1px solid @commonBorderColor;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .help-text {
+        color: @disableColor;
+        margin-top: 10px;
+      }
+    }
+    .total-price {
+      height: 40px;
+      text-align: right;
+      line-height: 40px;
+    }
+    .step-buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      padding: 15px 0;
+      .step-button {
+        margin-right: 90px;
+        .antsmakeButton(150px, 30px, white, @antYellow, lighten(@antYellow, 10%), darken(@antYellow, 10%));
+        &.disable {
+          .antsmakeButton(150px, 30px, white, @disableColor, @disableColor, @disableColor);
+          cursor: default;
+        }
+      }
+    }
+  }
+
+  .size-count-tool {
+    .title {
+      height: 40px;
+      line-height: 40px;
+      padding-left: 5px;
+    }
+  }
+}

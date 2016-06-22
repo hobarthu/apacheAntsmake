@@ -24,7 +24,7 @@
                       <div class="top-part">
                           <div class="word-item">
                               <div class="title">添加文字</div>
-                              <textarea rows="3" ants-placeholder="可以多次添加"></textarea>
+                              <textarea rows="3" ants-placeholder="可以多次添加" ng-model="canvas.customizedText" ng-change="drawText()"></textarea>
                           </div>
                           <div class="word-item">
                               <div class="title">选择一种字体</div>
@@ -68,8 +68,10 @@
               </div>
           </div>
       </div>
-      <div class="img-container">
+      <div class="img-container" data-ng-mouseenter="drawRect()" data-ng-mouseleave="clearRect()">
           <img src="imgs/design/big-img.jpg" alt=""/>
+          <canvas id="design_rect_canvas" class="lower-canvas" width="450" height="514" style="position: absolute; width: 335px; height: 438px; left: 0px; top: 0px; -webkit-user-select: none;"></canvas>
+          <canvas id="design_text_canvas" class="upper-canvas" width="450" height="514" style="position: absolute; width: 335px; height: 438px; left: 0px; top: 0px; -webkit-user-select: none;"></canvas>
           <div class="option-links">
               <div class="top-link"><a href="">隐藏区域线</a></div>
               <div>
