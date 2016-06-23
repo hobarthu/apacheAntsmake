@@ -7,6 +7,42 @@ define([], function() {
             {status: 2, name: "生产中"},
             {status: 3, name: "已发货"}
         ];
+
+        $scope.items = [
+            {
+                type: "默认分组",
+                phone: "1866804293",
+                name: "测试者",
+                style: "POLO",
+                color: "白色",
+                size: "尺码" ,
+                selected: true
+            }, {
+                type: "默认分组",
+                phone: "1866804293",
+                name: "测试者",
+                style: "POLO",
+                color: "白色",
+                size: "尺码"  ,
+                selected: true
+            }, {
+                type: "默认分组",
+                phone: "1866804293",
+                name: "测试者",
+                style: "POLO",
+                color: "白色",
+                size: "尺码" ,
+                selected: false
+            }
+        ];
+
+        $scope.action = {
+            selectAll: true,
+            reverse: true,
+            bulkAdd: true,
+            bulkDelete: true
+        };
+
     };
     designDetailCtrl.$inject = ['$scope'];
     return designDetailCtrl;

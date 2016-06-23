@@ -130,6 +130,54 @@
         </div>
     </div>
     <div class="size-count-tool">
-      <div class="title">尺码统计工具 — （帮助你更快捷的统计大家的尺码）</div>
+        <div class="title">尺码统计工具 — <span class="sub-text">（帮助你更快捷的统计大家的尺码）</span></div>
+        <div class="tool-container">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th class="group">分组</th>
+                    <th class="phone">手机号码</th>
+                    <th>姓名</th>
+                    <th>款式</th>
+                    <th>颜色</th>
+                    <th>尺码</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr data-ng-repeat="i in items">
+                    <td>{{::i.type}}</td>
+                    <td><input type="checkbox" ng-model="i.selected"/>{{::i.phone}}</td>
+                    <td>{{::i.name}}</td>
+                    <td>{{::i.style}}</td>
+                    <td>{{::i.color}}</td>
+                    <td>{{::i.size}}</td>
+                    <td><a href="">添加</a> | <a href="">删除</a></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="action-part">
+                <div class="add-group"><img src="imgs/designDetail/add-group.jpg" alt=""/>添加新分组</div>
+                <div class="checkboxs">
+                    <label for=""><input type="checkbox" ng-model="action.selectAll"/>全选</label>
+                    <label for=""><input type="checkbox" ng-model="action.reverse"/>反选</label>
+                    <label for=""><input type="checkbox" ng-model="action.bulkAdd"/>批量添加</label>
+                    <label for=""><input type="checkbox" ng-model="action.bulkDelete"/>批量删除</label>
+                </div>
+                <div class="export-button">导出表格</div>
+            </div>
+            <div class="copy-link">
+                <div class="update-link-button">更新统计链接</div>
+                <div class="link">
+                    <input type="text"/><div class="copy-button">复制链接</div>
+                </div>
+                <div class="text">/ 复制链接分享给大家进行尺码统计 /</div>
+            </div>
+            <div class="share-part">
+               <div>分享到</div>
+                <img src="imgs/designDetail/we-chat.jpg" alt=""/>
+                <img src="imgs/designDetail/qq.jpg" alt=""/>
+            </div>
+        </div>
     </div>
 </div>
