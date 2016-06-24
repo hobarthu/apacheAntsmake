@@ -127,6 +127,11 @@ define(['app/common/services/passport/passport-service', 'app/common/services/ut
         $scope.changeLocation = function(state){
             $state.go(state);
         };
+        
+        
+        $scope.$on("goToLogin", function() {
+             $scope.toLogin();
+        });
     }
 
     headerCtrl.$inject = ['$rootScope', '$scope', '$modal', '$state', 'passportService'];

@@ -78,11 +78,12 @@ input:-moz-placeholder { font-family: 'SimSun';font-size: 14px;color: #bfbfbf; }
 	height: 380px;
 }
 .home-brand .container {
-	padding: 20px 0;
+	padding: 38px 0;
 }
 .home-brand-palette {
 	width: 100%;
 }
+
 .home-brand-palette img {
 	width: 100%;
 	height: 100px;
@@ -179,16 +180,19 @@ input:-moz-placeholder { font-family: 'SimSun';font-size: 14px;color: #bfbfbf; }
 .list-design {
 	list-style: none;
 	display: block;
+    padding: 0;
+    padding-left: 15px;
 }
 .list-design>li {
-	padding: 10px 15px;
+    height: 180px;
     cursor: pointer;
 }
 .list-design>li:not(:last-child) {
 	border-bottom: 1px solid rgb(183, 183, 183);
 }
 .list-design>li .avatar {
-	width: 100%;
+    width: 132px;
+    height: 162px;
 }
 .list-design>li .caption {
 	display: block;
@@ -740,10 +744,20 @@ input:-moz-placeholder { font-family: 'SimSun';font-size: 14px;color: #bfbfbf; }
     justify-content: center;
 }
 .sub-img-container>.row {
-    width: 900px;
+    width: 990px;
+    margin: 0;
+}
+.sub-img-container>.row>.col-xs-6 {
+    padding: 0;
+}
+.sub-img-container>.row>.col-xs-6>.right {
+    padding-right: 11px;
+}
+.sub-img-container>.row>.col-xs-6>.left {
+    padding-left: 11px;
 }
 .home-list-container {
-    width: 900px;
+    width: 990px;
     position: relative;
 }
 .float-container {
@@ -751,7 +765,8 @@ input:-moz-placeholder { font-family: 'SimSun';font-size: 14px;color: #bfbfbf; }
     right: -85px;
     top: 30px;
     border: 1px rgb(229, 229, 229) solid;
-    width: 85px;
+    width: 78px;
+    height: 274px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -767,12 +782,12 @@ input:-moz-placeholder { font-family: 'SimSun';font-size: 14px;color: #bfbfbf; }
     cursor: pointer;
 }
 .float-container>.item>.phone-number {
-    font-size: 12px;
+    font-size: 11px;
 }
 .qr-code-container {
     position: absolute;
     bottom: -101px;
-    left: -8px;
+    left: -11px;
 }
 .qr-code-container>img {
     width: 100px;
