@@ -1,4 +1,4 @@
-define(['app/common/services/passport/passport-service', 'app/common/services/passport/passport-service', 'app/common/services/util/antscache-service'], function() {
+define(['app/common/services/passport/passport-service', 'app/common/services/util/antscache-service'], function() {
 
     function headerCtrl($rootScope, $scope, $modal, $state, passportService) {
 
@@ -73,30 +73,20 @@ define(['app/common/services/passport/passport-service', 'app/common/services/pa
         	if(form.$invalid){
         		return false;
         	}
-            $scope.hideModal();
-            $rootScope.logined = true;
-            res.access_token = '';
-            res.refresh_token = '';
+        	passportService.login($scope.form.account, $scope.form.password).then(function(res){
+        		if(res.data.token.access_token && res.data.token.refresh_token) {
+        			$scope.hideModal();
+        			$rootScope.logined = true;
 
-            passportService.storeCredential({
-                account: $scope.form.account,
-                accessToken: res.access_token,
-                refreshToken: res.refresh_token
-            });
-//        	passportService.login($scope.form.account, $scope.form.password).then(function(res){
-//        		if(res.access_token && res.refresh_token) {
-//        			$scope.hideModal();
-//        			$rootScope.logined = true;
-//
-//        			passportService.storeCredential({
-//        				account: $scope.form.account,
-//        				accessToken: res.access_token,
-//        				refreshToken: res.refresh_token
-//        			});
-//        		}
-//        	}, function(res){
-//        		$scope.error = res;
-//        	});
+        			passportService.storeCredential({
+        				account: $scope.form.account,
+        				accessToken: res.data.token.access_token,
+        				refreshToken: res.data.token.refresh_token
+        			});
+        		}
+        	}, function(res){
+        		$scope.error = res;
+        	});
         };
         $scope.logout = function(){
         	passportService.removeCredential();
@@ -137,6 +127,11 @@ define(['app/common/services/passport/passport-service', 'app/common/services/pa
         $scope.changeLocation = function(state){
             $state.go(state);
         };
+        
+        
+        $scope.$on("goToLogin", function() {
+             $scope.toLogin();
+        });
     }
 
     headerCtrl.$inject = ['$rootScope', '$scope', '$modal', '$state', 'passportService'];
