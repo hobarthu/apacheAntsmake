@@ -1,9 +1,6 @@
-define([], function(){
-	function homeCtrl($scope, $state){
-        (function() {
-            $scope.showQrCode = false;
-        })();
-
+define(['app/common/services/resource/resource-common-service'], function(){
+	function homeCtrl($scope, $state, resourceCommonService){
+        $scope.showQrCode = false;
         $scope.toCaseDetail = function() {
             $state.go('caseDetail', {caseId: 0});
         };
@@ -19,7 +16,16 @@ define([], function(){
         $scope.toCart = function() {
             $state.go("myCart");
         };
+
+        (function() {
+            var url = baseServiceUrl + "site/index";
+            resourceCommonService.getEntity(url, {}, '').then(function(data) {
+                $scope.homeData = data.data;
+                console.log($scope.homeData);
+            });
+
+        })();
 	}
-	homeCtrl.$inject = ['$scope', '$state'];
+	homeCtrl.$inject = ['$scope', '$state', 'resourceCommonService'];
 	return homeCtrl;
 });

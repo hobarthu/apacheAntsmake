@@ -15,7 +15,7 @@ define(['app/common/services/resource/resource-common-service', 'app/common/serv
 
         passport.getCode = function(phone) {
             var url = baseServiceUrl + "user/code";
-            return resourceCommonService.createEntity(url, null, { phone: phone }, "获取验证码失败！");
+            return resourceCommonService.createEntity(url, null, { name: phone }, "获取验证码失败！");
         };
 
         passport.refreshToken = function(refreshToken) {
