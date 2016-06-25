@@ -1,8 +1,21 @@
-define([], function() {
-    var designCtrl = function($scope) {
+define(['app/common/services/util/antscache-service'], function() {
+    var designCtrl = function($scope, antsCache) {
         $scope.canvas = {
             customizedText: ""
         };
+
+        var rect = new fabric.Rect({
+            stroke: "white",
+            strokeWidth: 10,
+            fill: 'transparent',
+            width: 200,
+            height: 300
+        });
+        var text = new fabric.Text($scope.canvas.customizedText, {
+            fontFamily: 'Arial',
+            fontSize: 48,
+            fontWeight: 'bold'
+        });
 
         $scope.pages = [
             {order: 1, name: "设计", id: "design"},
@@ -16,26 +29,45 @@ define([], function() {
         };
 
         $scope.drawRect = function() {
-            var canvas = document.getElementById('design_rect_canvas');
-            var ctx = canvas.getContext('2d');
-            ctx.strokeRect(101, 101, 240, 300);
+            console.log(antsCache.getImageCanvas());
+            var canvas = antsCache.getImageCanvas();
+            if (canvas) {
+                canvas.add(rect);
+                canvas.centerObject(rect);
+                canvas.renderAll();
+            }
         };
 
         $scope.clearRect = function() {
-            var canvas = document.getElementById('design_rect_canvas');
-            var ctx = canvas.getContext('2d');
-            ctx.clearRect(100, 100, 242, 302);
+            console.log("remove");
+            var canvas = antsCache.getImageCanvas();
+            if (canvas) {
+                canvas.remove(rect);
+            }
         };
 
         $scope.drawText = function() {
-            var canvas = document.getElementById('design_text_canvas');
-            var ctx = canvas.getContext('2d');
-            ctx.font = "Bold 48px Arial";
-            ctx.textAlign = "left";
-            ctx.fillText($scope.canvas.customizedText, 100, 250);
+            console.log("aa");
+            var canvas = antsCache.getImageCanvas();
+            if (canvas) {
+                console.log($scope.canvas.customizedText);
+                text.set({text: $scope.canvas.customizedText});
+                canvas.add(text);
+                canvas.centerObject(text);
+                canvas.renderAll();
+            }
         };
 
+        (function() {
+//            var canvas = new fabric.Canvas('c');
+//            fabric.Image.fromURL('imgs/demo-shirt.png', function(oImg) {
+//                console.log("oImg", oImg);
+//                oImg.scale(0.5).setFlipX(true);
+//                canvas.add(oImg);
+//            });
+        })();
+
     };
-    designCtrl.$inject = ['$scope'];
+    designCtrl.$inject = ['$scope', 'antsCache'];
     return designCtrl;
 });

@@ -1,17 +1,15 @@
 define(['app/common/services/modules'], function(){
     function cacheService(){
-        var headerActiveTab = {};
+        var imageCanvas = {};
 
-        var service = {
-            setHeaderActiveTab: function(tab) {
-                headerActiveTab = tab;
+        return {
+            setImageCanvas: function(canvas) {
+                imageCanvas = canvas;
             },
-            getHeaderActiveTab: function() {
-                return headerActiveTab;
+            getImageCanvas: function() {
+                return imageCanvas;
             }
         };
-
-        return service;
     }
 
     cacheService.$inject = [];

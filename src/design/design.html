@@ -69,9 +69,10 @@
           </div>
       </div>
       <div class="img-container" data-ng-mouseenter="drawRect()" data-ng-mouseleave="clearRect()">
-          <img src="imgs/design/big-img.jpg" alt=""/>
-          <canvas id="design_rect_canvas" class="lower-canvas" width="450" height="514" style="position: absolute; width: 335px; height: 438px; left: 0px; top: 0px; -webkit-user-select: none;"></canvas>
-          <canvas id="design_text_canvas" class="upper-canvas" width="450" height="514" style="position: absolute; width: 335px; height: 438px; left: 0px; top: 0px; -webkit-user-select: none;"></canvas>
+          <image-canvas data-canvas-id="image_canvas" data-img-url="imgs/design/big-img.jpg" width="450" height="514"></image-canvas>
+          <!--<div><img src="imgs/design/big-img.jpg" alt=""/></div>-->
+          <canvas id="rect_canvas"></canvas>
+          <!--<canvas id="design_text_canvas" class="upper-canvas" width="450" height="514" style="position: absolute; width: 335px; height: 438px; left: 0px; top: 0px; -webkit-user-select: none;"></canvas>-->
           <div class="option-links">
               <div class="top-link"><a href="">隐藏区域线</a></div>
               <div>
