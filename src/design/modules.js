@@ -1,5 +1,4 @@
-define(["app/design/designCtrl", "app/design/designDetailCtrl"], function(designCtrl, designDetailCtrl) {
+define(["app/design/designCtrl"], function(designCtrl) {
     var design = angular.module('design', []);
     design.controller('designCtrl', designCtrl);
-    design.controller('designDetailCtrl', designDetailCtrl);
 });

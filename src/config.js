@@ -184,22 +184,6 @@ define(['app/common/services/passport/api-interceptor'], function(APIInterceptor
                     }
                 }
             })
-            .state('designDetail', {
-                url: '/design/detail/{designId}',
-                views: {
-                    header: {
-                        templateUrl: 'src/common/layout/header/header.html',
-                        controller: 'headerCtrl'
-                    },
-                    body: {
-                        templateUrl: 'src/design/design-detail.html',
-                        controller: 'designDetailCtrl'
-                    },
-                    footer: {
-                        templateUrl: 'src/common/layout/footer/footer.html'
-                    }
-                }
-            });
         $httpProvider.interceptors.push(APIInterceptor);
     }
     config.$inject = ['$stateProvider', '$urlRouterProvider', '$httpProvider', '$locationProvider'];
