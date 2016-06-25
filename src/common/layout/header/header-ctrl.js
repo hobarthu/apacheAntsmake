@@ -127,12 +127,21 @@ define(['app/common/services/passport/passport-service', 'app/common/services/ut
         $scope.changeLocation = function(state){
             $state.go(state);
         };
+
+        var loginSubscription = postal.subscribe({
+            channel: "passport",
+            topic: "login",
+            callback: function(data, envelope) {
+                $scope.toLogin();
+            }
+        });
         
-        
-        $scope.$on("goToLogin", function() {
-             $scope.toLogin();
+        $scope.$on('$destroy', function() {
+            loginSubscription && loginSubscription.unsubscribe();
         });
     }
+    
+    
 
     headerCtrl.$inject = ['$rootScope', '$scope', '$modal', '$state', 'passportService'];
 

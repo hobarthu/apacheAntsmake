@@ -2,29 +2,50 @@
     <div class="public-welcome-text">欢迎来到Antsmake，穿点好的，很有必要！</div>
     <div class="public-content-container sample-detail">
        <div class="small-img-container">
-           <div class="small-img" data-ng-repeat="side in clothObj.sides" data-ng-click="selectSide(side)">
-               <img data-ng-style="selectedColorStyle" src="{{side.img}}" alt=""/>
+           <div class="small-img" data-ng-class="{'selected': selectedSide.id == side.id}"
+                data-ng-repeat="side in clothObj.sides" data-ng-click="selectSide(side)">
+               <img data-ng-style="selectedColor.style" src="{{side.img}}" alt=""/>
            </div>
        </div>
        <div class="big-img-container">
-          <div class="big-img"><img data-ng-style="selectedColorStyle" src="{{selectedSide.img}}" alt=""/></div>
+          <div class="big-img"><img data-ng-style="selectedColor.style" src="{{selectedSide.img}}" alt=""/></div>
        </div>
        <div class="cloth-detail-container">
            <div class="cloth-detail">
                <div class="type">{{clothObj.type}}</div>
                <div class="title-container">
                    <span class="title">{{clothObj.title}}</span>
-                   <span class="price">{{clothObj.price}}</span>
+                   <span class="price">￥{{clothObj.price}}</span>
                </div>
                <div class="color-container">
                    <div class="text">请选择颜色：</div>
                    <div class="color-items">
-                       <div class="color-item" data-ng-repeat="color in clothObj.colors" data-ng-style="color"
+                       <div class="color-item" data-ng-class="{'selected': selectedColor.id == color.id}" data-ng-repeat="color in clothObj.colors" data-ng-style="{'background-color': color.code}"
                                data-ng-click="selectColor(color)"></div>
                    </div>
                </div>
                <div class="size-detail">
-                   <a href="">查看尺码与详情</a>
+                   <a data-ng-click="showSizeDetailToggle()">{{showSizeDetailText}}</a>
+                   <div data-ng-if="showSizeDetail" class="size-detail-popover">
+                       <ul>
+                           <li>休闲男女同款</li>
+                           <li>100%纯棉</li>
+                       </ul>
+                       <div class="tab-container"> <!-- Only required for left/right tabs -->
+                               <ul class="nav nav-tabs">
+                                   <li class="active"><a href="#sample_tab1" data-toggle="tab">身高体重</a></li>
+                                   <li><a href="#sample_tab2" data-toggle="tab">尺码测量</a></li>
+                               </ul>
+                               <div class="tab-content">
+                                   <div class="tab-pane active" id="sample_tab1">
+                                       身高体重
+                                   </div>
+                                   <div class="tab-pane" id="sample_tab2">
+                                       尺码测量
+                                   </div>
+                               </div>
+                           </div>
+                   </div>
                </div>
                <div class="size-select">
                    <span>尺码： </span>
@@ -36,7 +57,7 @@
                </div>
            </div>
            <div class="button-container">
-               <div class="add-cart-button">加入购物车</div>
+               <div class="add-cart-button" data-ng-click="addToCart()">加入购物车</div>
            </div>
        </div>
     </div>

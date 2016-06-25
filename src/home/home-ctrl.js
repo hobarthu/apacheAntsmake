@@ -1,5 +1,5 @@
 define(['app/common/services/resource/resource-common-service', 'app/common/services/passport/passport-service'], function(){
-	function homeCtrl($rootScope, $scope, $state, resourceCommonService, passportService){
+	function homeCtrl($scope, $state, resourceCommonService, passportService){
         $scope.showQrCode = false;
         $scope.designType = "all";
 
@@ -23,7 +23,11 @@ define(['app/common/services/resource/resource-common-service', 'app/common/serv
             var credential = passportService.getCredential();
 
             if (_.isEmpty(credential)) {
-                $rootScope.$broadcast("goToLogin");
+                postal.publish({
+                    channel: "passport",
+                    topic: "login",
+                    data: {}
+                });
             } else {
                 var url = baseServiceUrl + "designs";
                 resourceCommonService.getEntity(url, {access_token: credential.accessToken}, '').then(function(data) {
@@ -47,6 +51,6 @@ define(['app/common/services/resource/resource-common-service', 'app/common/serv
             $scope.showAllDesigns();
         })();
 	}
-	homeCtrl.$inject = ['$rootScope', '$scope', '$state', 'resourceCommonService', 'passportService'];
+	homeCtrl.$inject = ['$scope', '$state', 'resourceCommonService', 'passportService'];
 	return homeCtrl;
 });

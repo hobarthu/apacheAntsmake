@@ -7,6 +7,14 @@ define([], function(){
             {title: "110CM"}
         ];
 
+        var addCartSubscription = postal.subscribe({
+            channel: "cart",
+            topic: "add",
+            callback: function(data, envelope) {
+                console.log("add");
+            }
+        });
+
 		$scope.items = [
             {
                 img: "imgs/thirt.png",
